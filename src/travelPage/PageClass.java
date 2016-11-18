@@ -61,36 +61,26 @@ public class PageClass {
 	public void readCells(Iterator<Cell> cellIterator) throws IOException {
 		int j = 0;
 		while (cellIterator.hasNext()) {
-			if (j == 0) { // First iteration. Detect name process
-				findProcess(cellIterator, process);
-			}
+			if (j == 0) // First iteration. Detect name process
+				findProcess(cellIterator);
 			readParams(cellIterator, j, params);
 			++j;
 		}
 		System.out.println("Starting process " + process + "...");
 		if (checkValuesTours(params[0], params[1], params[2], params[3], params[4], params[5])) {
-			if (!opened) {
-				openWeb();
-				opened = true;
-			} 
 			if (!first) {
 				Admin.mainPage();
-			}
-			else first = false;
+			} else
+				first = false;
 			runProcess(process);
 			this.process = "";
 		}
 	}
 
-	public void findProcess(Iterator<Cell> cellIterator, String process) {
+	public void findProcess(Iterator<Cell> cellIterator) {
 		Cell cell = cellIterator.next();
-		String split[] = cell.toString().split("");
-
-		for (int k = 0; k < split.length; ++k) {
-			if (split[k].equals("."))
-				break;
-			this.process += split[k];
-		}
+		this.process = cell.getStringCellValue();
+		System.out.println(process);
 	}
 
 	public void readParams(Iterator<Cell> cellIterator, int j, String[] params) {
@@ -117,7 +107,7 @@ public class PageClass {
 
 	public static void writeStatus(int rowNum, String status) throws IOException {
 		FileInputStream file = new FileInputStream(
-				new File("D:\\Users\\allullam\\Documents\\Eclipse\\git\\TestingServer\\test.xlsx"));
+				new File("C:\\Users\\allullam\\git\\selenium\\test.xlsx"));
 
 		XSSFWorkbook yourworkbook = new XSSFWorkbook(file);
 
@@ -131,7 +121,7 @@ public class PageClass {
 		column.setCellValue(status);
 		file.close();
 		FileOutputStream out = new FileOutputStream(
-				new File("D:\\Users\\allullam\\Documents\\Eclipse\\git\\TestingServer\\test.xlsx"));
+				new File("C:\\Users\\allullam\\git\\selenium\\test.xlsx"));
 		yourworkbook.write(out);
 		out.close();
 		yourworkbook.close();
