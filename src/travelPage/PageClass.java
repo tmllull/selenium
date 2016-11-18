@@ -25,7 +25,6 @@ public class PageClass {
 
 	public static By by = null;
 	public String process = new String();
-	String pathFile;
 	String[] params = new String[10];
 	File myFile;
 	public static Integer rowNum = 0;
@@ -33,7 +32,7 @@ public class PageClass {
 	boolean first = true;
 
 	public void readFile(String pathFile) throws IOException, EncryptedDocumentException, InvalidFormatException {
-		File myFile = new File(pathFile);
+		myFile = new File(pathFile);
 		FileInputStream fis = new FileInputStream(myFile);
 		XSSFWorkbook myWorkBook = new XSSFWorkbook(fis);
 		XSSFSheet mySheet = myWorkBook.getSheetAt(0);
@@ -96,17 +95,8 @@ public class PageClass {
 
 	public void readParams(Iterator<Cell> cellIterator, int j, String[] params) {
 		Cell cell = cellIterator.next();
-		// WHY NOT WORKING?!?!?!?!?!?!?!?!?!?!?!?
-		// String[] split = String.valueOf(cell.toString()).split(".");
-		// System.out.println(split[0]);
-		String split[] = cell.toString().split("");
-		String val = "";
-		for (int i = 0; i < split.length; ++i) {
-			if (split[i].equals("."))
-				break;
-			val += split[i];
-		}
-		params[j] = val;
+		String[] split = String.valueOf(cell.toString()).split("\\.");
+		params[j] = split[0];
 	}
 
 	public void runProcess(String process) throws NumberFormatException, IOException {
