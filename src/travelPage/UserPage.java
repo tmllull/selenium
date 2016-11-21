@@ -1,5 +1,8 @@
 package travelPage;
 
+import mainClasses.PageClass;
+import mainClasses.SetWebDriver;
+
 public class UserPage extends PageClass {
 
 	public static void userPage() throws InterruptedException {

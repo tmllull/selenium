@@ -1,5 +1,8 @@
 package travelPage;
 
+import mainClasses.PageClass;
+import mainClasses.SetWebDriver;
+
 public class Loggin extends PageClass {
 
 	public static void logginUser(String user, String pass) {

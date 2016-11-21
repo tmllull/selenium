@@ -1,5 +1,8 @@
 package travelPage;
 
+import mainClasses.PageClass;
+import mainClasses.SetWebDriver;
+
 public class Hotels extends PageClass{
 
 	public static void SelectHotel() {

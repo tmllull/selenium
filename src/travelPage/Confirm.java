@@ -3,6 +3,9 @@ package travelPage;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 
+import mainClasses.PageClass;
+import mainClasses.SetWebDriver;
+
 public class Confirm extends PageClass{
 
 	public static void confirm() {

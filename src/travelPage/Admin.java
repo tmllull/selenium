@@ -2,6 +2,9 @@ package travelPage;
 
 import org.openqa.selenium.Alert;
 
+import mainClasses.PageClass;
+import mainClasses.SetWebDriver;
+
 public class Admin extends PageClass {
 
 	public static void mainPage() {

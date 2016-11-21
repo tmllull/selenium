@@ -1,4 +1,4 @@
-package travelPage;
+package mainClasses;
 
 import java.io.IOException;
 

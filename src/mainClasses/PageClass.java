@@ -1,4 +1,4 @@
-package travelPage;
+package mainClasses;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -20,6 +20,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import travelPage.Admin;
+import travelPage.Processes;
 
 public class PageClass {
 
@@ -167,6 +170,7 @@ public class PageClass {
 	}
 
 	public static void waitUntilPath(WebDriverWait wait, String path) {
+		System.out.println("Waiting for path "+path+"...");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(path)));
 	}
 
@@ -174,7 +178,7 @@ public class PageClass {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className(className)));
 	}
 
-	public void waitUntilId(WebDriverWait wait, String id) {
+	public static void waitUntilId(WebDriverWait wait, String id) {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(id)));
 	}
 

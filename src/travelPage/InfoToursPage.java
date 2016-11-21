@@ -4,13 +4,16 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 
+import mainClasses.PageClass;
+import mainClasses.SetWebDriver;
+
 public class InfoToursPage extends PageClass {
 
 	public static void fillInfoTours(String tour, String adults, String children, String infants, String pay) throws IOException {
-		waitUntilPath(SetWebDriver.wait, "//*[@id='tours']");
+		//waitUntilPath(SetWebDriver.wait, "//*[@id='tours']");
 		//System.out.println("Choosing date...");
 		writeStatus(rowNum, "Choosing date...");
-		sendKeys("//*[@id='tours']", "24/11/2016");
+		//sendKeys("//*[@id='tours']", "24/11/2016");
 		click("//*[@id='bookingform']/div[3]/div[2]/div[1]");
 		click("//*[@id='s2id_autogen3']/a/span[1]");
 		click("//*[@id='bookingform']/div[3]/div[2]/div[3]/div/select/option[" + tour + "]");

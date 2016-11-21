@@ -2,6 +2,9 @@ package travelPage;
 
 import org.openqa.selenium.By;
 
+import mainClasses.PageClass;
+import mainClasses.SetWebDriver;
+
 public class InfoCarsPage extends PageClass {
 
 	public void fillInfoCars() {
