@@ -13,7 +13,7 @@ public class PruebaCalculadora {
 	  public void evaluatesExpression() {
 	    Calculadora calculadora = new Calculadora();
 	    int sum = calculadora.evalua("1+2+3+5");
-	    assertEquals(6, sum);
+	    assertEquals(10, sum);
 	 
 	  }
 	}
