@@ -11,7 +11,7 @@ public class Main {
 			throws InterruptedException, IOException, EncryptedDocumentException, InvalidFormatException {
 
 		PageClass pClass = new PageClass();
-		pClass.readFile("C:\\Users\\allullam\\git\\selenium\\test.xlsx");
+		pClass.readFile("C:\\Users\\allullam\\git\\seleniumModeling\\test.xlsx");
 	}
 
 }
